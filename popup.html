@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 400px; padding: 10px; font-family: Arial, sans-serif; }
+    button, input { margin: 5px; padding: 5px 10px; }
+    #apiList { max-height: 300px; overflow-y: auto; margin-bottom: 10px; }
+    .api-item { border-bottom: 1px solid #ccc; padding: 5px 0; }
+    .filter-section { margin-bottom: 10px; }
+    .method-filter { display: inline-block; margin-right: 10px; }
+    .export-options { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>API Logger to Postman</h2>
+  <div class="filter-section">
+    <input type="text" id="domainFilter" placeholder="Filter by domain (e.g., example.com)">
+  </div>
+  <div class="filter-section">
+    <div class="method-filter"><input type="checkbox" id="methodGet" checked><label for="methodGet">GET</label></div>
+    <div class="method-filter"><input type="checkbox" id="methodPost" checked><label for="methodPost">POST</label></div>
+    <div class="method-filter"><input type="checkbox" id="methodPut" checked><label for="methodPut">PUT</label></div>
+    <div class="method-filter"><input type="checkbox" id="methodDelete" checked><label for="methodDelete">DELETE</label></div>
+    <div class="method-filter"><input type="checkbox" id="methodOptions" checked><label for="methodOptions">OPTIONS</label></div>
+  </div>
+  <div class="export-options">
+    <div>
+      <input type="checkbox" id="trackHeaders" checked>
+      <label for="trackHeaders">Track Headers</label>
+    </div>
+    <div>
+      <input type="checkbox" id="excludeCookies">
+      <label for="excludeCookies">Exclude cookies from headers</label>
+    </div>
+  </div>
+  <div id="apiList"></div>
+  <button id="exportBtn">Export to Postman</button>
+  <button id="clearBtn">Clear Logs</button>
+  <script src="popup.js"></script>
+</body>
+</html>
